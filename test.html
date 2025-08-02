@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f0f0f0;
+        }
+        .test-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .test-item {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .success { border-color: #4CAF50; background: #f1f8e9; }
+        .error { border-color: #f44336; background: #ffebee; }
+        .info { border-color: #2196F3; background: #e3f2fd; }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Portfolio Deployment Test</h1>
+        
+        <div class="test-item info">
+            <h3>Test Information</h3>
+            <p>This page tests if your portfolio files are loading correctly.</p>
+        </div>
+        
+        <div class="test-item" id="css-test">
+            <h3>CSS Test</h3>
+            <p>Checking if styles.css loads...</p>
+        </div>
+        
+        <div class="test-item" id="js-test">
+            <h3>JavaScript Test</h3>
+            <p>Checking if script.js loads...</p>
+        </div>
+        
+        <div class="test-item" id="fonts-test">
+            <h3>Fonts Test</h3>
+            <p>Checking if external fonts load...</p>
+        </div>
+        
+        <div class="test-item" id="icons-test">
+            <h3>Icons Test</h3>
+            <p>Checking if Font Awesome icons load...</p>
+        </div>
+        
+        <div class="test-item">
+            <h3>Next Steps</h3>
+            <p>If all tests pass, your portfolio should work correctly on Vercel.</p>
+            <a href="index.html" style="color: #2196F3;">Go to Portfolio</a>
+        </div>
+    </div>
+
+    <script>
+        // Test CSS loading
+        function testCSS() {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'styles.css';
+            link.onload = () => {
+                document.getElementById('css-test').className = 'test-item success';
+                document.getElementById('css-test').innerHTML = '<h3>CSS Test</h3><p>✅ styles.css loaded successfully!</p>';
+            };
+            link.onerror = () => {
+                document.getElementById('css-test').className = 'test-item error';
+                document.getElementById('css-test').innerHTML = '<h3>CSS Test</h3><p>❌ Failed to load styles.css</p>';
+            };
+            document.head.appendChild(link);
+        }
+
+        // Test JavaScript loading
+        function testJS() {
+            const script = document.createElement('script');
+            script.src = 'script.js';
+            script.onload = () => {
+                document.getElementById('js-test').className = 'test-item success';
+                document.getElementById('js-test').innerHTML = '<h3>JavaScript Test</h3><p>✅ script.js loaded successfully!</p>';
+            };
+            script.onerror = () => {
+                document.getElementById('js-test').className = 'test-item error';
+                document.getElementById('js-test').innerHTML = '<h3>JavaScript Test</h3><p>❌ Failed to load script.js</p>';
+            };
+            document.head.appendChild(script);
+        }
+
+        // Test external resources
+        function testExternalResources() {
+            // Test Google Fonts
+            const fontLink = document.createElement('link');
+            fontLink.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap';
+            fontLink.rel = 'stylesheet';
+            fontLink.onload = () => {
+                document.getElementById('fonts-test').className = 'test-item success';
+                document.getElementById('fonts-test').innerHTML = '<h3>Fonts Test</h3><p>✅ Google Fonts loaded successfully!</p>';
+            };
+            fontLink.onerror = () => {
+                document.getElementById('fonts-test').className = 'test-item error';
+                document.getElementById('fonts-test').innerHTML = '<h3>Fonts Test</h3><p>❌ Failed to load Google Fonts</p>';
+            };
+            document.head.appendChild(fontLink);
+
+            // Test Font Awesome
+            const iconLink = document.createElement('link');
+            iconLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css';
+            iconLink.rel = 'stylesheet';
+            iconLink.onload = () => {
+                document.getElementById('icons-test').className = 'test-item success';
+                document.getElementById('icons-test').innerHTML = '<h3>Icons Test</h3><p>✅ Font Awesome loaded successfully!</p>';
+            };
+            iconLink.onerror = () => {
+                document.getElementById('icons-test').className = 'test-item error';
+                document.getElementById('icons-test').innerHTML = '<h3>Icons Test</h3><p>❌ Failed to load Font Awesome</p>';
+            };
+            document.head.appendChild(iconLink);
+        }
+
+        // Run tests when page loads
+        window.addEventListener('load', () => {
+            testCSS();
+            testJS();
+            testExternalResources();
+        });
+    </script>
+</body>
+</html> 

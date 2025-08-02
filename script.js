@@ -1,12 +1,17 @@
 // DOM Elements
-const navigation = document.querySelector('.navigation');
-const navLinks = document.querySelectorAll('.nav-link');
-const sideNavItems = document.querySelectorAll('.side-nav-item');
-const sections = document.querySelectorAll('section');
-const contactForm = document.getElementById('contactForm');
+let navigation, navLinks, sideNavItems, sections, contactForm;
 
 // Active section tracking
 let activeSection = 'home';
+
+// Initialize DOM elements when page loads
+function initializeElements() {
+    navigation = document.querySelector('.navigation');
+    navLinks = document.querySelectorAll('.nav-link');
+    sideNavItems = document.querySelectorAll('.side-nav-item');
+    sections = document.querySelectorAll('section');
+    contactForm = document.getElementById('contactForm');
+}
 
 // Scroll event handler
 function handleScroll() {
@@ -60,50 +65,55 @@ function scrollToSection(sectionId) {
     }
 }
 
-// Navigation click handlers
-navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const sectionId = link.getAttribute('data-section');
-        scrollToSection(sectionId);
+// Initialize navigation event listeners
+function initializeNavigation() {
+    // Navigation click handlers
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const sectionId = link.getAttribute('data-section');
+            scrollToSection(sectionId);
+        });
     });
-});
 
-sideNavItems.forEach(item => {
-    item.addEventListener('click', (e) => {
-        e.preventDefault();
-        const sectionId = item.getAttribute('data-section');
-        scrollToSection(sectionId);
+    sideNavItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const sectionId = item.getAttribute('data-section');
+            scrollToSection(sectionId);
+        });
     });
-});
+}
 
 // Contact form handler
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(this);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const subject = formData.get('subject');
-        const message = formData.get('message');
-        
-        // Basic validation
-        if (!name || !email || !subject || !message) {
-            showNotification('Please fill in all fields', 'error');
-            return;
-        }
-        
-        if (!isValidEmail(email)) {
-            showNotification('Please enter a valid email address', 'error');
-            return;
-        }
-        
-        // Simulate form submission
-        showNotification('Message sent successfully!', 'success');
-        this.reset();
-    });
+function initializeContactForm() {
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            // Basic validation
+            if (!name || !email || !subject || !message) {
+                showNotification('Please fill in all fields', 'error');
+                return;
+            }
+            
+            if (!isValidEmail(email)) {
+                showNotification('Please enter a valid email address', 'error');
+                return;
+            }
+            
+            // Simulate form submission
+            showNotification('Message sent successfully!', 'success');
+            this.reset();
+        });
+    }
 }
 
 // Email validation
@@ -383,8 +393,15 @@ window.addEventListener('scroll', () => {
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
-    updateActiveNavigation();
-    revealOnScroll();
+    try {
+        initializeElements(); // Initialize elements here
+        updateActiveNavigation();
+        initializeNavigation(); // Initialize navigation listeners here
+        initializeContactForm(); // Initialize contact form handler here
+        revealOnScroll();
+    } catch (error) {
+        console.error('Error initializing portfolio:', error);
+    }
 });
 
 // Add loading animation
