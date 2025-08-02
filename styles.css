@@ -732,6 +732,17 @@ section {
     color: rgba(255, 255, 255, 0.7);
 }
 
+.contact-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: white;
+    text-decoration: underline;
+}
+
 .contact-form {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);

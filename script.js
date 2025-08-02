@@ -449,4 +449,26 @@ if (!CSS.supports('scroll-behavior', 'smooth')) {
     const smoothScrollPolyfill = document.createElement('script');
     smoothScrollPolyfill.src = 'https://cdn.jsdelivr.net/npm/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js';
     document.head.appendChild(smoothScrollPolyfill);
-} 
+}
+
+// Download CV function
+function downloadCV() {
+    // You can replace this with your actual CV file
+    const cvUrl = 'https://drive.google.com/file/d/YOUR_CV_FILE_ID/view?usp=sharing';
+    
+    // Create a temporary link to download
+    const link = document.createElement('a');
+    link.href = cvUrl;
+    link.target = '_blank';
+    link.download = 'YourName_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    // Show notification
+    showNotification('CV download started!', 'success');
+}
+
+// Make scrollToSection function globally available
+window.scrollToSection = scrollToSection;
+window.downloadCV = downloadCV; 
