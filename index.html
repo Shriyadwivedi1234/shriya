@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - UI/UX Designer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navigation fixed-top">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="nav-logo">Portfolio</div>
+                <div class="nav-menu">
+                    <button class="nav-link" data-section="home">Home</button>
+                    <button class="nav-link" data-section="about">About</button>
+                    <button class="nav-link" data-section="projects">Projects</button>
+                    <button class="nav-link" data-section="skills">Skills</button>
+                </div>
+            </div>
+            <button class="nav-cta" data-section="contact">Get In Touch</button>
+        </div>
+    </nav>
+
+    <!-- Side Navigation -->
+    <div class="side-nav">
+        <div class="side-nav-container">
+            <button class="side-nav-item" data-section="home" title="Home">
+                <i class="fas fa-home"></i>
+            </button>
+            <button class="side-nav-item" data-section="about" title="About">
+                <i class="fas fa-user"></i>
+            </button>
+            <button class="side-nav-item" data-section="projects" title="Projects">
+                <i class="fas fa-briefcase"></i>
+            </button>
+            <button class="side-nav-item" data-section="skills" title="Skills">
+                <i class="fas fa-code"></i>
+            </button>
+            <button class="side-nav-item" data-section="contact" title="Contact">
+                <i class="fas fa-envelope"></i>
+            </button>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-background">
+                <div class="hero-bg-element hero-bg-1"></div>
+                <div class="hero-bg-element hero-bg-2"></div>
+            </div>
+            
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-welcome">
+                        <div class="welcome-badge">👋 Welcome to my portfolio</div>
+                        <h1 class="hero-title">
+                            Creative
+                            <span class="hero-title-gradient">UI/UX Designer</span>
+                        </h1>
+                        <p class="hero-description">
+                            Computer Engineering student passionate about creating intuitive and beautiful 
+                            digital experiences. Transitioning from backend development to UI/UX design.
+                        </p>
+                        <p class="hero-location">
+                            Based in <span class="location-highlight">Your Location</span>
+                        </p>
+                    </div>
+
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary">
+                            <i class="fas fa-envelope"></i>
+                            <span>Hire Me</span>
+                        </button>
+                        <button class="btn btn-secondary">
+                            <i class="fas fa-download"></i>
+                            <span>Download CV</span>
+                        </button>
+                    </div>
+
+                    <div class="hero-social">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="profile-container">
+                        <div class="profile-bg-1"></div>
+                        <div class="profile-bg-2"></div>
+                        <div class="profile-card">
+                            <div class="profile-illustration">
+                                <div class="profile-emoji">👨‍💻</div>
+                            </div>
+                            <div class="profile-info">
+                                <h3>Your Name</h3>
+                                <p>UI/UX Designer & Developer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-indicator">
+                <div class="scroll-bar">
+                    <div class="scroll-dot"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-subtitle">Get to know me better</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <p class="about-description">
+                            I'm a passionate Computer Engineering student with a strong foundation in backend development, 
+                            now transitioning into the exciting world of UI/UX design. I believe in creating digital experiences 
+                            that are not only beautiful but also intuitive and user-centered.
+                        </p>
+                        
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">3+</div>
+                                <div class="stat-label">Years Experience</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">50+</div>
+                                <div class="stat-label">Projects Completed</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">Client Satisfaction</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-visual">
+                        <div class="about-card">
+                            <div class="about-image">
+                                <div class="image-placeholder">📱</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">My Projects</h2>
+                    <p class="section-subtitle">Some of my recent work</p>
+                </div>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-placeholder">🎨</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">E-commerce Redesign</h3>
+                            <p class="project-description">
+                                Complete redesign of an e-commerce platform focusing on user experience and conversion optimization.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">UI/UX</span>
+                                <span class="tag">Figma</span>
+                                <span class="tag">Prototyping</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-placeholder">📱</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Mobile App Design</h3>
+                            <p class="project-description">
+                                Mobile-first design for a fitness tracking application with intuitive navigation.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Mobile</span>
+                                <span class="tag">UI Design</span>
+                                <span class="tag">User Research</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-placeholder">💻</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Dashboard Interface</h3>
+                            <p class="project-description">
+                                Admin dashboard with data visualization and user management features.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Dashboard</span>
+                                <span class="tag">Data Viz</span>
+                                <span class="tag">Web Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Skills & Tools</h2>
+                    <p class="section-subtitle">Technologies I work with</p>
+                </div>
+                
+                <div class="skills-content">
+                    <div class="skills-category">
+                        <h3 class="category-title">Design Tools</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-icon">🎨</div>
+                                <div class="skill-name">Figma</div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">📐</div>
+                                <div class="skill-name">Adobe XD</div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">🖼️</div>
+                                <div class="skill-name">Photoshop</div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">✏️</div>
+                                <div class="skill-name">Illustrator</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-category">
+                        <h3 class="category-title">Development</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-icon">💻</div>
+                                <div class="skill-name">HTML/CSS</div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">⚡</div>
+                                <div class="skill-name">JavaScript</div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">⚛️</div>
+                                <div class="skill-name">React</div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">🐍</div>
+                                <div class="skill-name">Python</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">Let's work together</p>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p>your.email@example.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Phone</h4>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Location</h4>
+                                <p>Your City, Country</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Send Message</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-logo">Portfolio</div>
+                    <p class="footer-description">
+                        Creating beautiful digital experiences with passion and precision.
+                    </p>
+                </div>
+                
+                <div class="footer-right">
+                    <div class="footer-social">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Your Name. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
